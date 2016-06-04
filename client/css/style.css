@@ -8,11 +8,24 @@ h1 {
     height: 90%;
     border: 3px solid #73AD21;
     padding: 10px;
-    text-align: center;
 }
 
 input{
 	position: relative;
 	width:90%;
 	vertical-align: bottom;
+}
+
+.button{
+	position:relative;
+	margin-right: 0 auto;
+}
+
+.msg{
+	text-align: center;
+}
+
+.banner{
+	text-align: center;
+	list-style-type: none;
 }

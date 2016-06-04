@@ -15,7 +15,8 @@ let ChatForm = React.createClass({
     e.preventDefault();
     let data = {
       message: ReactDOM.findDOMNode(this.refs.message).value.trim(),
-      created_by: 'Groot',
+      username:'Groot',
+      branchId: null,
     };
     ReactDOM.findDOMNode(this.refs.message).value = '';
     let that = this;

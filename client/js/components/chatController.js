@@ -4,19 +4,20 @@ let React = require('react');
 let Message = require('./message');
 let ChatForm = require('./chatForm');
 let Banner = require('./banner')
+let MainButton = require('./mainbutton')
 
 
 let Display = React.createClass({
   getInitialState: function() {
     return { 
       messages: [],
-      branch:'Main',
+      branch:'1',
     }
   },
 
   getData: function(){
     let that = this;
-    $.get(this.props.url).done(function(data){
+    $.get(this.props.url + 'messages?branch_id=' + this.state.branch).done(function(data){
       that.dataParsing(data);
     });
     //sampling without server example below
@@ -47,13 +48,19 @@ let Display = React.createClass({
     })
   },
 
+  buttonHandler:function(){
+    this.replaceState(this.getInitialState());
+    this.getData();
+  },
+
   render: function() {
     let messageNodes = this.state.messages.map((message, index)=>{
       return <Message data={message} key={index} onClicky = {this.clickHandler} index={index} />
     });
     return (
       <ul className="chatList">
-        <Banner branch={this.state.branch}/>
+        <MainButton buttonton={this.buttonHandler} bsStyle="primary"/>
+        <Banner branch={this.state.branch} />
         {messageNodes}
         <ChatForm url={this.props.url} update={this.addTheLatestMessage}/>
       </ul>
