@@ -4,7 +4,7 @@ let ChatForm = React.createClass({
   post: function(data) {
     return $.ajax({
       type: 'POST',
-      url: this.props.url+'messages',
+      url: this.props.url + 'messages',
       crossDomain: true,
       data: JSON.stringify(data),
       contentType: 'application/json'
@@ -28,10 +28,12 @@ let ChatForm = React.createClass({
 
   render: function() {
     return (
+      <div className="chatform">
       <form id="chat-form" onSubmit={this.handle}>
-        <input type="text" ref="message" />
+        <input type="text" ref="message" className="bar" />
         <input type="submit" className="hidden" />
       </form>
+      </div>
     );
   }
 });

@@ -60,7 +60,7 @@ let Display = React.createClass({
     });
     return (
       <ul className="chatList">
-        <MainButton buttonton={this.buttonHandler} bsStyle="primary"/>
+        <MainButton buttonton={this.buttonHandler}/>
         <Banner branch={this.state.branch} />
         {messageNodes}
         <ChatForm url={this.props.url} update={this.addTheLatestMessage} currentBranch={this.state.branch} />
