@@ -1,21 +1,21 @@
 'use strict';
-
+console.log('in main.js')
 let React = require('react');
 let ReactDOM = require('react-dom');
+let Display = require('./components/chatController.js')
 
+//var ChatWindow = require('./components/chat');
+//var CalendarWindow = require('./components/calendar');
 
-var App = React.createClass({
-  getInitialState: function(){
-  	return null;
-  },
-
-	render: function() {
+let App = React.createClass({
+  render: function() {
     return (
       <div className="container">
-        <h1>Tic Tac Toe</h1>
-      </div>
+      	<Display url="http://slack-server.elasticbeanstalk.com/messages"/>
+      </div> 
     );
-  },
-})
+  }
+});
+
 
 ReactDOM.render(<App />, document.getElementById('content'));

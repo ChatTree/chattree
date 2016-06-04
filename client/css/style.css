@@ -12,11 +12,7 @@ h1 {
 }
 
 input{
-	width:100%;
-}
-
-.input{
 	position: relative;
-	width:100%;
+	width:90%;
 	vertical-align: bottom;
 }
