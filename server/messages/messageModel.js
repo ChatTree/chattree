@@ -15,7 +15,7 @@ const Message = db.define('message', {
 	message: {
 		type: Sequelize.TEXT
 	},
-	branchId: {
+	branch_id: {
 		type: Sequelize.INTEGER
 	},
 	timeStamp: {

@@ -6,17 +6,19 @@ const app = express();
 const server = http.createServer(app);
 const path = require('path');
 const bodyParser = require('body-parser');
-const data = require('./database/controller/dbController');
+// const data = require('./database/controller/dbController');
 const messageController = require('./messages/messageController');
 
 
 app.use(express.static(path.join(__dirname + '/../client')));
+app.use(bodyParser.json());
+
 app.get('/', function(req, res){
 	res.render('../client/index.html');
 });
-app.get('/database', function(req, res) {
-	data();
-});
+// app.get('/database', function(req, res) {
+// 	data();
+// });
 app.get('/messages', messageController.getMessages);
 app.post('/messages', messageController.postMessages);
 
