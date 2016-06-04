@@ -11,7 +11,7 @@ let App = React.createClass({
   render: function() {
     return (
       <div className="container">
-      	<Display url="http://slack-server.elasticbeanstalk.com/messages"/>
+      	<Display pollInterval={3000} url="http://slack-server.elasticbeanstalk.com/messages"/>
       </div> 
     );
   }
