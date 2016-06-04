@@ -3,12 +3,14 @@
 let React = require('react');
 let Message = require('./message');
 let ChatForm = require('./chatForm');
+let Banner = require('./banner')
 
 
 let Display = React.createClass({
   getInitialState: function() {
     return { 
-      messages: [] 
+      messages: [],
+      branch:'Main',
     }
   },
 
@@ -17,7 +19,6 @@ let Display = React.createClass({
     $.get(this.props.url).done(function(data){
       that.dataParsing(data);
     });
-    setTimeout(that.getData, that.props.pollInterval);
     //sampling without server example below
     // let data = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.".split(' ')
     // this.dataParsing(data)
@@ -39,16 +40,20 @@ let Display = React.createClass({
     console.log('state is ', this.state.messages);
   },
 
-  clickHandler:function(){
-    //to be determined
+  clickHandler:function(index){
+    this.setState({
+      messages: [this.state.messages[index]],
+      branch: this.state.messages[index].message,
+    })
   },
 
   render: function() {
     let messageNodes = this.state.messages.map((message, index)=>{
-      return <Message data={message} key={index} onClick = {this.clickHandler} />
+      return <Message data={message} key={index} onClicky = {this.clickHandler} index={index} />
     });
     return (
       <ul className="chatList">
+        <Banner branch={this.state.branch}/>
         {messageNodes}
         <ChatForm url={this.props.url} update={this.addTheLatestMessage}/>
       </ul>
