@@ -1,6 +1,5 @@
 'use strict';
 
-const db;
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize('postgres://chattree:chattree@localhost/chattree');
 
