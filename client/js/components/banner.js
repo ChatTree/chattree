@@ -5,9 +5,12 @@ let React = require('react');
 let Banner = React.createClass ({
 
 	render: function(){
+		let currentBranch = this.props.branch;
 		let msg = this.props.data;
 		return (
-			<h2>{this.props.branch}</h2>
+			<ul className="banner">
+				<li>{currentBranch}</li>
+			</ul>
 		);
 	}
 });
