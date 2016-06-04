@@ -7,8 +7,10 @@ const messageController = require('./messages/messageController');
 const server = http.createServer(app);
 const path = require('path');
 
-app.use(express.static(path.join(__dirname + '../client/'));
-app.get('/', '../client/index.html');
+app.use(express.static(path.join(__dirname + '/../client/')));
+app.get('/', function(req, res){
+	res.render('../client/index.html');
+});
 
 
 

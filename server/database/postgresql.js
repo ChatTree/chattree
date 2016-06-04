@@ -1,7 +1,7 @@
 'use strict';
 
 const Sequelize = require('Sequelize');
-const Sequelize = new Sequelize('chattree', 'chattree', 'ilovechattree', {
+const Sequelize = new Sequelize('chattree', 'jayunani', 'l1ghtgrenades', {
 	host: 'localhost',
 	dialect: 'postgres'
 });
