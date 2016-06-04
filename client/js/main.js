@@ -1,5 +1,5 @@
 'use strict';
-console.log('in main.js')
+
 let React = require('react');
 let ReactDOM = require('react-dom');
 let Display = require('./components/chatController.js')
@@ -12,7 +12,7 @@ let App = React.createClass({
     return (
       <div className="container">
       	<Display pollInterval={3000} url="localhost:3000/"/>
-      </div> 
+      </div>
     );
   }
 });
