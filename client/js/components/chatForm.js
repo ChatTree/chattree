@@ -1,5 +1,6 @@
-var React = require('react');
-var ChatForm = React.createClass({
+let React = require('react');
+let ReactDOM = require('react-dom')
+let ChatForm = React.createClass({
   post: function(data) {
     return $.ajax({
       type: 'POST',
@@ -12,17 +13,14 @@ var ChatForm = React.createClass({
 
   handle: function(e) {
     e.preventDefault();
-    let input = this.refs.message;
-    let inputValue = input.value;
-    let inputRect = input.getBoundingClientRect();
-    console.log(input, inputValue, inputRect)
     let data = {
-      message: React.findDOMNode(this.refs.message).value.trim(),
+      message: ReactDOM.findDOMNode(this.refs.message).value.trim(),
       created_by: 'Groot',
     };
-    //React.findDOMNode(this.refs.message).value = '';
+    ReactDOM.findDOMNode(this.refs.message).value = '';
     let that = this;
     this.post(data).done(function(res) {
+      console.log('this is our respose',res)
       that.props.update(res);
     });
   },

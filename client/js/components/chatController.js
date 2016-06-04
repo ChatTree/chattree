@@ -17,6 +17,7 @@ let Display = React.createClass({
     $.get(this.props.url).done(function(data){
       that.dataParsing(data);
     });
+    setTimeout(that.getData, that.props.pollInterval);
     //sampling without server example below
     // let data = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.".split(' ')
     // this.dataParsing(data)
@@ -32,6 +33,12 @@ let Display = React.createClass({
     this.getData();
   },
 
+  addTheLatestMessage: function(data) {
+    let messageList = this.state.messages;
+    this.setState({ messages: messageList.concat(data) });
+    console.log('state is ', this.state.messages);
+  },
+
   clickHandler:function(){
     //to be determined
   },
@@ -40,11 +47,10 @@ let Display = React.createClass({
     let messageNodes = this.state.messages.map((message, index)=>{
       return <Message data={message} key={index} onClick = {this.clickHandler} />
     });
-
     return (
       <ul className="chatList">
         {messageNodes}
-        <ChatForm url={this.props.url}/>
+        <ChatForm url={this.props.url} update={this.addTheLatestMessage}/>
       </ul>
     );
   }
