@@ -1,12 +1,14 @@
 'use strict';
 
-var Message = require('./messageModel');
+const Message = require('./messageModel');
 
 module.exports = {
-	getMessage: function() {
-
-	},
-	postMessage: function() {
+	getMessages: function(request, response) {
 		
+	},
+	postMessages: function(request, response) {
+		Message.sync().then(function(){
+			return Message.create(request.body);
+		});
 	}
 }
