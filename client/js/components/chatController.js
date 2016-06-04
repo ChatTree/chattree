@@ -9,7 +9,7 @@ let MainButton = require('./mainbutton')
 
 let Display = React.createClass({
   getInitialState: function() {
-    return { 
+    return {
       messages: [],
       branch:'1',
     }
@@ -18,6 +18,7 @@ let Display = React.createClass({
   getData: function(){
     let that = this;
     $.get(this.props.url + 'messages?branch_id=' + this.state.branch).done(function(data){
+      console.log('data from get request: ', data);
       that.dataParsing(data);
     });
     //sampling without server example below
@@ -62,7 +63,7 @@ let Display = React.createClass({
         <MainButton buttonton={this.buttonHandler} bsStyle="primary"/>
         <Banner branch={this.state.branch} />
         {messageNodes}
-        <ChatForm url={this.props.url} update={this.addTheLatestMessage}/>
+        <ChatForm url={this.props.url} update={this.addTheLatestMessage} currentBranch={this.state.branch} />
       </ul>
     );
   }

@@ -4,7 +4,7 @@ let ChatForm = React.createClass({
   post: function(data) {
     return $.ajax({
       type: 'POST',
-      url: this.props.url,
+      url: this.props.url+'messages',
       crossDomain: true,
       data: JSON.stringify(data),
       contentType: 'application/json'
@@ -16,7 +16,7 @@ let ChatForm = React.createClass({
     let data = {
       message: ReactDOM.findDOMNode(this.refs.message).value.trim(),
       username:'Groot',
-      branchId: null,
+      branch_id: this.props.currentBranch,
     };
     ReactDOM.findDOMNode(this.refs.message).value = '';
     let that = this;
