@@ -1,24 +1,28 @@
 h1 {
-	color:red;
+	color:white;
 }
+
 
 .container{
 	margin: auto;
     width: 60%;
-    height: 90%;
-    border: 3px solid #73AD21;
-    padding: 10px;
+    height: 70%;
+    border: 2px solid white;
+    border-radius: 25px;
+    padding: 25px;
+    background: rgba(25, 25, 25, .5);
+}
+
+
+button{
+	border-radius: 5px;
+	background-color:white;
+	color:green;
+	opacity: 0.8;
 }
 
 input{
-	position: relative;
-	width:90%;
-	vertical-align: bottom;
-}
-
-.button{
-	position:relative;
-	margin-right: 0 auto;
+	opacity: 0.8;
 }
 
 .msg{
@@ -28,4 +32,26 @@ input{
 .banner{
 	text-align: center;
 	list-style-type: none;
+}
+
+.chatform{
+	margin-top:60%;
+}
+
+.hidden{
+	width:10%;
+}
+
+.bar{
+	width:85%;
+	padding-right:20px;
+}
+
+body {
+	background: url(pic.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+  	color:white;
 }
