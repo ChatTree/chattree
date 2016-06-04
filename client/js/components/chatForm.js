@@ -12,12 +12,16 @@ var ChatForm = React.createClass({
 
   handle: function(e) {
     e.preventDefault();
-    var data = {
+    let input = this.refs.message;
+    let inputValue = input.value;
+    let inputRect = input.getBoundingClientRect();
+    console.log(input, inputValue, inputRect)
+    let data = {
       message: React.findDOMNode(this.refs.message).value.trim(),
-      created_by: 'Matt and Steve!!!!!',
+      created_by: 'Groot',
     };
-    React.findDOMNode(this.refs.message).value = '';
-    var that = this;
+    //React.findDOMNode(this.refs.message).value = '';
+    let that = this;
     this.post(data).done(function(res) {
       that.props.update(res);
     });

@@ -8,8 +8,8 @@ let Message = React.createClass ({
 		let msg = this.props.data;
 		return (
 			<ul className="msg">
-				<p>{msg}</p>
-
+				<strong>{msg.author}</strong>
+				<p>{msg.message}</p>
 			</ul>
 		);
 	}
@@ -18,5 +18,3 @@ let Message = React.createClass ({
 module.exports = Message;
 
 
-				// <strong>{msg.author}</strong>
-				// <p>{msg.message}</p>
