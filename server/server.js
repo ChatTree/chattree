@@ -1,15 +1,17 @@
-let React = require('react');
-let ReactDOM = require('react-dom');
+'use strict';
 
-var App = React.createClass({
-	getInitialState: function(){},
-	render: function(){
-		return(
-		<div className="container">
-			<h1>Hello World</h1>
-		</div>
-		);
-	},
-})
+const express = require('express');
+const app = express();
+const http = require('http');
+const messageController = require('./messages/messageController');
+const server = http.createServer(app);
+const path = require('path');
 
-ReactDOM.render(<App />, document.getElementById('content'));
+app.use(express.static(path.join(__dirname + '../client/'));
+app.get('/', '../client/index.html');
+
+
+
+server.listen(3000);
+
+module.exports = server;
