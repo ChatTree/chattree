@@ -11,7 +11,7 @@ let App = React.createClass({
   render: function() {
     return (
       <div className="container">
-      	<Display pollInterval={3000} url="localhost:3000/"/>
+      	<Display pollInterval={3000} url="http://localhost:3000/"/>
       </div>
     );
   }
