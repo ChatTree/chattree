@@ -16,7 +16,7 @@ module.exports = {
           branch_id: data.branch_id
         },
         order: [
-          ['createdAt', 'DESC']
+          ['createdAt', 'ASC']
         ]
       }).then(function(messages){
         // console.log('thurr be messages fromt he db: ', messages);

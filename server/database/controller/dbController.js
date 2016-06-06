@@ -1,5 +1,8 @@
 'use strict';
 
+/* This file no longer has a purpose.
+ * No, seriously. Just delete it.
+ */
 const Sequelize = require('sequelize');
 const db = require('../model/dbModel');
 
