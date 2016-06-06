@@ -1,7 +1,7 @@
 # chattree
 ##The awesomest branching chat app ever made
 
-We decrease the number of notifications in a group chat by allowing users to respond and receive messages for only the messages and topics they are interested in. Users will create a new chat window by clicking on a message, at which point a new chat window will appear to continue the conversation. Users who are not interested in the conversation will not receive any notifications. 
+We decrease the number of notifications in a group chat by allowing users to respond and receive messages for only the messages and topics they are interested in. Users will create a new chat window by clicking on a message, at which point a new chat window will appear to continue the conversation. Users who are not interested in the conversation will not receive any notifications for that specfic chat branch.
 
 ## Additional features we would like to implement include:
 * Chat functionality with sockets
@@ -13,4 +13,7 @@ We decrease the number of notifications in a group chat by allowing users to res
 ## Technology Stack
 * React 
 * PostgreSQL
+
+##tl;dr
+Check out how we structured our database to see how we wanted the app to function. Feel free to structure the front end how you want. 
 
