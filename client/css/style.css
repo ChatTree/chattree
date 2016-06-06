@@ -35,7 +35,7 @@ input{
 }
 
 .chatform{
-	margin-top:60%;
+	/*margin-top:60%;*/
 }
 
 .hidden{
@@ -48,7 +48,7 @@ input{
 }
 
 body {
-	background: url(pic.jpg) no-repeat center center fixed; 
+	background: url(pic.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;

@@ -16,13 +16,11 @@ app.use(bodyParser.json());
 app.get('/', function(req, res){
 	res.render('../client/index.html');
 });
-// app.get('/database', function(req, res) {
-// 	data();
-// });
+
 app.get('/messages', messageController.getMessages);
 app.post('/messages', messageController.postMessages);
 
-//app.post('/branch');
+//app.post('/branch' zomgBranchMethodz!);
 
 server.listen(3000);
 
